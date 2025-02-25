@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.comment-container p{
+    @apply rounded-xl border border-red-500 bg-red-200 p-3 mb-3
+}

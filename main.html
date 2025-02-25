@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+    <link rel="stylesheet" href="./output/output.css" />
+  </head>
+  <body class="bg-slate-800">
+    <section class="mx-auto min-h-screen max-w-md bg-gray-200">
+      <header class="w-full">
+        <div class="border-b-1 border-gray-300 bg-white p-6">
+          <nav class="flex items-center justify-between">
+            <div class="flex">
+              <img class="mr-2 h-auto w-12" src="./assets/logo.png" alt="" />
+              <div>
+                <h2 class="text-xl text-black">
+                  $<span id="TotalAmount">999</span>
+                </h2>
+                <p class="text-sm text-gray-500">Available Balance</p>
+              </div>
+            </div>
+            <div>
+              <button
+                id="btn-log-out"
+                class="btn rounded-lg border-[#e5e5e5] bg-white text-gray-500 shadow-none"
+              >
+                <img class="align-middle" src="./assets/logout.png" alt="" />
+                Log Out
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="w-full rounded-b-xl bg-white p-6">
+        <div>
+          <div class="flex items-center">
+            <img class="mr-1 h-6 w-auto" src="./assets/flame.png" alt="" />
+            <h1 class="text-2xl font-bold text-black">Welcome to Payooo!</h1>
+          </div>
+          <p class="mt-3 mb-6 text-sm text-gray-500">
+            Enjoy easy and convenient financial services with us. Cashout charge
+            is low and
+          </p>
+          <div class="grid grid-cols-3 gap-3" id="cards">
+            <div class="card" id="add-money-card">
+              <img src="./assets/wallet.png" alt="" />
+              <h3 class="card-title">Add Money</h3>
+            </div>
+            <div class="card" id="cash-out-card">
+              <img src="./assets/cashOut.png" alt="" />
+              <h3 class="card-title">Cash Out</h3>
+            </div>
+            <div class="card" id="transfer-money-card">
+              <img src="./assets/transferMoney.png" alt="" />
+              <h3 class="card-title">Transfer Money</h3>
+            </div>
+            <div class="card" id="bonus-card">
+              <img src="./assets/bonus.png" alt="" />
+              <h3 class="card-title">Get Bonus</h3>
+            </div>
+            <div class="card" id="pay-bill-card">
+              <img src="./assets/paybill.png" alt="" />
+              <h3 class="card-title">Pay Bill</h3>
+            </div>
+            <div class="card">
+              <img src="./assets/transaction.png" alt="" />
+              <h3 class="card-title">Transaction</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <p style="color: rgba(0, 0, 255, 0.329);">gfhdf</p> -->
+      <section class="w-full p-6" id="form-container">
+        <!-- !Add Money  -->
+        <div id="Add-Money-Section" class="hidden w-full">
+          <h2 class="mb-4 text-xl font-semibold text-black">Add Money</h2>
+          <div class="flex w-full justify-center">
+            <form class="w-full rounded-2xl bg-white p-6">
+              <fieldset class="fieldset">
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Select A Bank</label
+                >
+                <select
+                  id="add-bank"
+                  class="select h-12 rounded-full border-none bg-gray-100 pl-6 text-gray-500"
+                >
+                  <option selected class="text-dark" disabled>
+                    Select bank
+                  </option>
+                  <option class="text-gray-500">Bkash</option>
+                  <option class="text-gray-500">Rocket</option>
+                  <option class="text-gray-500">Nagad</option>
+                </select>
+
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Bank Account Number</label
+                >
+                <input
+                  id="add-number"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 11 digit account number"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Amount to Add</label
+                >
+                <input
+                  id="add-amount"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Add Amount to withdraw"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Pin Number</label
+                >
+                <input
+                  id="add-pin"
+                  type="password"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 4 digit pin number"
+                  required
+                />
+                <button
+                  id="btn-add-money"
+                  class="btn mt-4 rounded-full border-none bg-blue-500 text-base font-medium btn-neutral"
+                >
+                  Add Money
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        
+        <!--! Cash Out  -->
+        <div id="Cash-Out-Section" class="hidden w-full">
+          <h2 class="mb-4 text-xl font-semibold text-black">Transfer Money</h2>
+          <div class="flex w-full justify-center">
+            <form class="w-full rounded-2xl bg-white p-6">
+              <fieldset class="fieldset">
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Agent Number</label
+                >
+                <input
+                  id="out-number"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 11 digit number"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Amount
+                </label>
+                <input
+                  id="out-amount"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter Amount to withdraw"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Pin Number</label
+                >
+                <input
+                  id="out-pin"
+                  type="password"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 4 digit pin number"
+                  required
+                />
+                <button
+                  id="btn-out-money"
+                  class="btn mt-4 rounded-full border-none bg-blue-500 text-base font-medium btn-neutral"
+                >
+                  Withdraw Money
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <!-- !Transfer money  -->
+        <div id="Transfer-Money-Section" class="hidden w-full">
+          <h2 class="mb-4 text-xl font-semibold text-black">Cash Out</h2>
+          <div class="flex w-full justify-center">
+            <form class="w-full rounded-2xl bg-white p-6">
+              <fieldset class="fieldset">
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >User Account Number</label
+                >
+                <input
+                  id="transfer-number"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 11 digit number"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Amount
+                </label>
+                <input
+                  id="transfer-amount"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter Amount to withdraw"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Pin Number</label
+                >
+                <input
+                  id="transfer-pin"
+                  type="password"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 4 digit pin number"
+                  required
+                />
+                <button
+                  id="btn-transfer-money"
+                  class="btn mt-4 rounded-full border-none bg-blue-500 text-base font-medium btn-neutral"
+                >
+                  Send Now
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <!-- !Get Bonus  -->
+        <div id="Bonus-Section" class="hidden w-full">
+          <h2 class="mb-4 text-xl font-semibold text-black">Get Bonus</h2>
+          <div class="flex w-full justify-center">
+            <form class="w-full rounded-2xl bg-white p-6">
+              <fieldset class="fieldset">
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Enter Bonus Coupon</label
+                >
+                <input
+                  id="coupon"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter your coupon"
+                  required
+                />
+                
+                <button
+                  id="btn-bonus"
+                  class="btn mt-4 rounded-full border-none bg-blue-500 text-base font-medium btn-neutral"
+                >
+                  Get Bonus
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <!-- ! Pay Bill -->
+         <div id="Pay-Bill-Section" class="hidden w-full">
+          <h2 class="mb-4 text-xl font-semibold text-black">Pay Bill</h2>
+          <div class="flex w-full justify-center">
+            <form class="w-full rounded-2xl bg-white p-6">
+              <fieldset class="fieldset">
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Select To Pay</label
+                >
+                <select
+                  id="bill-orgaization"
+                  class="select h-12 rounded-full border-none bg-gray-100 pl-6 text-gray-500"
+                >
+                  <option selected class="text-dark" disabled>
+                    Select Organization
+                  </option>
+                  <option class="text-gray-500">Palli Biddut</option>
+                  <option class="text-gray-500">Titas</option>
+                  <option class="text-gray-500">Osaka</option>
+                </select>
+
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >BillerAccount Number</label
+                >
+                <input
+                  id="bill-number"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter account number"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Amount to Pay</label
+                >
+                <input
+                  id="bill-amount"
+                  type="text"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Add Amount to Pay"
+                  required
+                />
+                <label
+                  class="fieldset-label text-base font-medium text-gray-500"
+                  >Pin Number</label
+                >
+                <input
+                  id="add-pin"
+                  type="password"
+                  class="input rounded-full border-none bg-gray-100 p-6 placeholder:text-gray-500"
+                  placeholder="Enter 4 digit pin number"
+                  required
+                />
+                <button
+                  id="btn-pay-bill"
+                  class="btn mt-4 rounded-full border-none bg-blue-500 text-base font-medium btn-neutral"
+                >
+                  Pay Now
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script src="./script/main.js"></script>
+  </body>
+</html>
