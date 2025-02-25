@@ -24,8 +24,6 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
@@ -34,7 +32,6 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-weight-black: 900;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -2590,6 +2587,246 @@
       border-bottom: var(--border) solid color-mix(in oklch, var(--color-base-content) 5%, #0000);
     }
   }
+  .\!card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: var(--radius-box) !important;
+    outline-width: 2px !important;
+    transition: outline 0.2s ease-in-out !important;
+    outline: 0 solid #0000 !important;
+    outline-offset: 2px !important;
+    &:focus {
+      outline-style: none !important;
+      @media (forced-colors: active) {
+        outline: 2px solid transparent !important;
+        outline-offset: 2px !important;
+      }
+    }
+    &:focus-visible {
+      outline-color: currentColor !important;
+    }
+    :where(figure:first-child) {
+      overflow: hidden !important;
+      border-start-start-radius: inherit !important;
+      border-start-end-radius: inherit !important;
+      border-end-start-radius: unset !important;
+      border-end-end-radius: unset !important;
+    }
+    :where(figure:last-child) {
+      overflow: hidden !important;
+      border-start-start-radius: unset !important;
+      border-start-end-radius: unset !important;
+      border-end-start-radius: inherit !important;
+      border-end-end-radius: inherit !important;
+    }
+    &:where(.card-border) {
+      border: var(--border) solid var(--color-base-200) !important;
+    }
+    &:where(.card-dash) {
+      border: var(--border) dashed var(--color-base-200) !important;
+    }
+    &.image-full {
+      display: grid !important;
+      &:before {
+        position: relative !important;
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+        border-radius: var(--radius-box) !important;
+        background-color: var(--color-neutral) !important;
+        opacity: 75% !important;
+        content: "" !important;
+      }
+      > * {
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+      }
+      > .card-body {
+        position: relative !important;
+        color: var(--color-neutral-content) !important;
+      }
+      :where(figure) {
+        overflow: hidden !important;
+        border-radius: inherit !important;
+      }
+      > figure img {
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+    figure {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    &:has(> input:is(input[type="checkbox"], input[type="radio"])) {
+      cursor: pointer !important;
+      user-select: none !important;
+    }
+    &:has(> :checked) {
+      outline: 2px solid currentColor !important;
+    }
+  }
+  .\!card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: var(--radius-box) !important;
+    outline-width: 2px !important;
+    transition: outline 0.2s ease-in-out !important;
+    outline: 0 solid #0000 !important;
+    outline-offset: 2px !important;
+    &:focus {
+      outline-style: none !important;
+      @media (forced-colors: active) {
+        outline: 2px solid transparent !important;
+        outline-offset: 2px !important;
+      }
+    }
+    &:focus-visible {
+      outline-color: currentColor !important;
+    }
+    :where(figure:first-child) {
+      overflow: hidden !important;
+      border-start-start-radius: inherit !important;
+      border-start-end-radius: inherit !important;
+      border-end-start-radius: unset !important;
+      border-end-end-radius: unset !important;
+    }
+    :where(figure:last-child) {
+      overflow: hidden !important;
+      border-start-start-radius: unset !important;
+      border-start-end-radius: unset !important;
+      border-end-start-radius: inherit !important;
+      border-end-end-radius: inherit !important;
+    }
+    &:where(.card-border) {
+      border: var(--border) solid var(--color-base-200) !important;
+    }
+    &:where(.card-dash) {
+      border: var(--border) dashed var(--color-base-200) !important;
+    }
+    &.image-full {
+      display: grid !important;
+      &:before {
+        position: relative !important;
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+        border-radius: var(--radius-box) !important;
+        background-color: var(--color-neutral) !important;
+        opacity: 75% !important;
+        content: "" !important;
+      }
+      > * {
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+      }
+      > .card-body {
+        position: relative !important;
+        color: var(--color-neutral-content) !important;
+      }
+      :where(figure) {
+        overflow: hidden !important;
+        border-radius: inherit !important;
+      }
+      > figure img {
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+    figure {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    &:has(> input:is(input[type="checkbox"], input[type="radio"])) {
+      cursor: pointer !important;
+      user-select: none !important;
+    }
+    &:has(> :checked) {
+      outline: 2px solid currentColor !important;
+    }
+  }
+  .\!card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: var(--radius-box) !important;
+    outline-width: 2px !important;
+    transition: outline 0.2s ease-in-out !important;
+    outline: 0 solid #0000 !important;
+    outline-offset: 2px !important;
+    &:focus {
+      outline-style: none !important;
+      @media (forced-colors: active) {
+        outline: 2px solid transparent !important;
+        outline-offset: 2px !important;
+      }
+    }
+    &:focus-visible {
+      outline-color: currentColor !important;
+    }
+    :where(figure:first-child) {
+      overflow: hidden !important;
+      border-start-start-radius: inherit !important;
+      border-start-end-radius: inherit !important;
+      border-end-start-radius: unset !important;
+      border-end-end-radius: unset !important;
+    }
+    :where(figure:last-child) {
+      overflow: hidden !important;
+      border-start-start-radius: unset !important;
+      border-start-end-radius: unset !important;
+      border-end-start-radius: inherit !important;
+      border-end-end-radius: inherit !important;
+    }
+    &:where(.card-border) {
+      border: var(--border) solid var(--color-base-200) !important;
+    }
+    &:where(.card-dash) {
+      border: var(--border) dashed var(--color-base-200) !important;
+    }
+    &.image-full {
+      display: grid !important;
+      &:before {
+        position: relative !important;
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+        border-radius: var(--radius-box) !important;
+        background-color: var(--color-neutral) !important;
+        opacity: 75% !important;
+        content: "" !important;
+      }
+      > * {
+        grid-column-start: 1 !important;
+        grid-row-start: 1 !important;
+      }
+      > .card-body {
+        position: relative !important;
+        color: var(--color-neutral-content) !important;
+      }
+      :where(figure) {
+        overflow: hidden !important;
+        border-radius: inherit !important;
+      }
+      > figure img {
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+    figure {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    &:has(> input:is(input[type="checkbox"], input[type="radio"])) {
+      cursor: pointer !important;
+      user-select: none !important;
+    }
+    &:has(> :checked) {
+      outline: 2px solid currentColor !important;
+    }
+  }
   .card {
     position: relative;
     display: flex;
@@ -4330,9 +4567,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-6 {
-    margin-block: calc(var(--spacing) * 6);
-  }
   .input {
     .label {
       display: flex;
@@ -4939,26 +5173,23 @@
   .table {
     display: table;
   }
-  .h-4 {
-    height: calc(var(--spacing) * 4);
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
   }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
-  .h-14 {
-    height: calc(var(--spacing) * 14);
-  }
-  .h-16 {
-    height: calc(var(--spacing) * 16);
+  .h-100 {
+    height: calc(var(--spacing) * 100);
   }
   .h-auto {
     height: auto;
+  }
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+  .min-h-full {
+    min-height: 100%;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -5119,9 +5350,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
   .rounded-b-xl {
     border-bottom-right-radius: var(--radius-xl);
     border-bottom-left-radius: var(--radius-xl);
@@ -5137,42 +5365,6 @@
   .border-none {
     --tw-border-style: none;
     border-style: none;
-  }
-  .select-ghost {
-    background-color: transparent;
-    transition: background-color 0.2s;
-    box-shadow: none;
-    border-color: #0000;
-    &:focus, &:focus-within {
-      background-color: var(--color-base-100);
-      color: var(--color-base-content);
-      border-color: #0000;
-      box-shadow: none;
-    }
-  }
-  .select-ghost {
-    background-color: transparent;
-    transition: background-color 0.2s;
-    box-shadow: none;
-    border-color: #0000;
-    &:focus, &:focus-within {
-      background-color: var(--color-base-100);
-      color: var(--color-base-content);
-      border-color: #0000;
-      box-shadow: none;
-    }
-  }
-  .select-ghost {
-    background-color: transparent;
-    transition: background-color 0.2s;
-    box-shadow: none;
-    border-color: #0000;
-    &:focus, &:focus-within {
-      background-color: var(--color-base-100);
-      color: var(--color-base-content);
-      border-color: #0000;
-      box-shadow: none;
-    }
   }
   .border-\[\#e5e5e5\] {
     border-color: #e5e5e5;
@@ -5198,21 +5390,12 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
-  .p-10 {
-    padding: calc(var(--spacing) * 10);
-  }
   .menu-title {
     padding-inline: calc(0.25rem * 3);
     padding-block: calc(0.25rem * 2);
@@ -5234,17 +5417,11 @@
     font-size: 0.875rem;
     font-weight: 600;
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
-  }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
-  .pt-2 {
-    padding-top: calc(var(--spacing) * 2);
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
   }
   .pl-6 {
     padding-left: calc(var(--spacing) * 6);
@@ -5260,10 +5437,6 @@
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
   }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
@@ -5271,38 +5444,6 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-  .select-lg {
-    --size: calc(var(--size-field, 0.25rem) * 12);
-    font-size: 1.125rem;
-  }
-  .select-lg {
-    --size: calc(var(--size-field, 0.25rem) * 12);
-    font-size: 1.125rem;
-  }
-  .select-lg {
-    --size: calc(var(--size-field, 0.25rem) * 12);
-    font-size: 1.125rem;
-  }
-  .select-md {
-    --size: calc(var(--size-field, 0.25rem) * 10);
-    font-size: 0.875rem;
-  }
-  .select-md {
-    --size: calc(var(--size-field, 0.25rem) * 10);
-    font-size: 0.875rem;
-  }
-  .select-md {
-    --size: calc(var(--size-field, 0.25rem) * 10);
-    font-size: 0.875rem;
-  }
-  .font-black {
-    --tw-font-weight: var(--font-weight-black);
-    font-weight: var(--font-weight-black);
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -5446,17 +5587,14 @@
     --btn-color: var(--color-neutral);
     --btn-fg: var(--color-neutral-content);
   }
-  .select-auto {
-    -webkit-user-select: auto;
-    user-select: auto;
-  }
-  .select-text {
-    -webkit-user-select: text;
-    user-select: text;
-  }
   .placeholder\:text-gray-500 {
     &::placeholder {
       color: var(--color-gray-500);
+    }
+  }
+  .md\:min-h-screen {
+    @media (width >= 48rem) {
+      min-height: 100vh;
     }
   }
 }
@@ -5633,6 +5771,37 @@
   --tw-font-weight: var(--font-weight-light);
   font-weight: var(--font-weight-light);
   color: var(--color-gray-500);
+}
+.collapse {
+  background-image: none;
+}
+.collapse-title p {
+  margin-top: calc(var(--spacing) * 1);
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  color: var(--color-gray-500);
+}
+.collapse-title h3 {
+  margin-top: calc(var(--spacing) * 1);
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.history {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-gray-200);
+  background-color: var(--color-white);
+}
+.collapse-content {
+  padding: calc(var(--spacing) * 0);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  color: var(--color-gray-500);
+}
+.collapse-title {
+  padding: calc(var(--spacing) * 0);
 }
 @layer theme, base, components, utilities;
 @layer theme;
